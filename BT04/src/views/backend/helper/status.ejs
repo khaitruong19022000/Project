@@ -1,0 +1,26 @@
+<% statusHelper = (status, link) => { %>
+    <% if(status == "active") { %>
+        <a href="<%= link %>" class="rounded-circle btn btn-sm btn-success">
+            <i class="fas fa-ban"></i>
+        </a>
+    <% } else if(status == "inactive") { %>  
+        <a href="<%= link %>" class="rounded-circle btn btn-sm btn-danger">
+            <i class="fas fa-ban"></i>
+        </a>  
+    <% }  %>     
+<% } %>
+
+<% 
+    statusHelper = (status, link) => {
+        let xhtmlStatus = '';
+
+        if(status === "active"){
+            xhtmlStatus = `<a href="${link}" class="rounded-circle btn btn-sm btn-success"><i class="fas fa-ban"></i></a>`
+        } else if(status === "inactive"){
+            xhtmlStatus = `<a href="${link}" class="rounded-circle btn btn-sm btn-danger"><i class="fas fa-ban"></i></a>`
+        }
+
+        return `${xhtmlStatus}`;
+    }    
+%>
+
